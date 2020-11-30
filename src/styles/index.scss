@@ -1,0 +1,80 @@
+@import "theme.scss";
+.login{
+  color:$mainColor;
+  .login-text{
+    width: 750px;
+    text-align: center;
+  }
+}
+.index{
+  height: 100%;
+  background-color: $lightGrey;
+  position: relative;
+  .slide{
+    height: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .head{
+    height: 85px;
+    line-height: 88px;
+    text-align: center;
+    background-color: $whiteColor;
+    color: $grayBlueColor;
+    font-weight: 700;
+  }
+  .answersheet-list{
+    width: 100%;
+    padding-bottom: 80px;
+    li{
+      width: 100%;
+      background-color: $whiteColor;
+      margin: 15px 0;
+      padding: 15px;
+      box-sizing: border-box;
+      p{
+        box-sizing: border-box;
+        padding: 20px 5px;
+        margin: 0;
+        text-align:left;
+        text-align: justify;
+      }
+      .radio{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap ;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 50px;
+        .van-radio__icon{
+          height: 32px !important;
+          line-height: 32px !important;
+        }
+        .van-icon{
+          width: 35px !important;
+          height: 35px !important;
+          line-height: 35px !important;
+          font-size: 30px !important;
+        }
+        .van-radio{
+          width: 40%;
+          margin: 25px 0px;
+          height: 40px;
+        }
+        .van-radio--horizontal{
+          margin-right: 0px !important;
+        }
+      }
+    }
+  }
+  .submit{
+    width: 100%;
+    height: 80px;
+    background-color: $grayBlueColor;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    color: $whiteColor;
+  }
+}
