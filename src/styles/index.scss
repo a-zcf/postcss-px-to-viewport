@@ -1,14 +1,90 @@
 @import "theme.scss";
-.login{
-  color:$mainColor;
-  .login-text{
-    width: 750px;
-    text-align: center;
+.tankuang{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba($color: #000000, $alpha: 0.6);
+  .regret-box{
+    width: 70%;
+    margin: 35% auto auto auto;
+    box-sizing: border-box;
+    position: relative;
+    background-color: $whiteColor;
+    border-radius: 30px;
+    padding: 30px 0px;
+    .weepImg{
+      display: block;
+      margin:auto;
+    }
+    p{
+      text-align: center;
+      font-size: 40px;
+    }
+    .regret-box-but{
+      display: block;
+      width: 70%;
+      height: 85px;
+      margin: auto;
+      border: none;
+      background-color: $lightOrangeColor;
+      border-radius: 100px;
+      color: $redColor;
+      font-size: 40px;
+    }
+    .regret-close{
+      color: $whiteColor;
+      position: absolute;
+      left: 42%;
+      bottom: -150px;
+      font-size: 80px;
+    }
+  }
+  .giftbag-box{
+    width: 70%;
+    margin: 35% auto auto auto;
+    box-sizing: border-box;
+    position: relative;
+    padding: 30px 0px;
+    background-image: linear-gradient(to bottom,$lightOrangeColor,$mainColor);
+    border-radius: 150px 150px 50px 50px;
+    p{
+      color: $yellowColor;
+      margin: 0;
+      text-align: center;
+      font-size: 40px;
+    }
+    .giftBagImg{
+      display: block;
+      width: 100%;
+      margin: 40px auto;
+    }
+    .giftbag-box-but{
+      display: block;
+      width: 70%;
+      height: 85px;
+      margin: auto;
+      border: none;
+      background-color: $yellowColor;
+      border-radius: 100px;
+      color: $redColor;
+      font-size: 40px;
+    }
+    .close{
+      color: $whiteColor;
+      position: absolute;
+      left: 42%;
+      bottom: -150px;
+      font-size: 80px;
+    }
   }
 }
 .index{
+  width: 100%;
   height: 100%;
   background-color: $lightGrey;
+  color: #000000;
   position: relative;
   .slide{
     height: 100%;
@@ -17,16 +93,17 @@
     overflow-y: scroll;
   }
   .head{
-    height: 85px;
-    line-height: 88px;
+    height: 95px;
+    line-height: 98px;
     text-align: center;
     background-color: $whiteColor;
     color: $grayBlueColor;
     font-weight: 700;
+    font-size: 38px;
   }
   .answersheet-list{
     width: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 97px;
     li{
       width: 100%;
       background-color: $whiteColor;
@@ -35,46 +112,72 @@
       box-sizing: border-box;
       p{
         box-sizing: border-box;
-        padding: 20px 5px;
+        padding: 20px 15px 0px 15px;
         margin: 0;
         text-align:left;
         text-align: justify;
+        font-size: 35px;
       }
       .radio{
         width: 100%;
-        display: flex;
-        flex-wrap: wrap ;
-        justify-content: space-between;
         box-sizing: border-box;
         padding: 0 50px;
-        .van-radio__icon{
-          height: 32px !important;
-          line-height: 32px !important;
+        .radio-group{
+          margin: 35px 0px;
         }
+        .van-radio {
+          align-items: stretch !important;
+      }
         .van-icon{
           width: 35px !important;
           height: 35px !important;
           line-height: 35px !important;
           font-size: 30px !important;
         }
-        .van-radio{
-          width: 40%;
-          margin: 25px 0px;
-          height: 40px;
+        .van-radio__icon{
+          height: 35px;
+          padding: 1vw 1vw 0vw 0vw;
         }
         .van-radio--horizontal{
           margin-right: 0px !important;
+          min-height: 45px;
+          .van-radio__label {
+            line-height: 50px;
+            text-align:left;
+            text-align: justify;
+        }
         }
       }
     }
   }
   .submit{
     width: 100%;
-    height: 80px;
+    height: 95px;
     background-color: $grayBlueColor;
     border: none;
     position: absolute;
     bottom: 0;
     color: $whiteColor;
+    font-size: 38px;
+  }
+  
+}
+
+/* 核销码 */
+.qrcode{
+  h3{
+    text-align: center;
+    color: $blueColor;
+    margin-top: 30%;
+  }
+  .code{
+    width: 100%;
+    #qrcode{
+      display: flex !important;
+      justify-content: center !important;
+    }
+  }
+  p{
+    text-align: center;
   }
 }

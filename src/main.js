@@ -7,10 +7,16 @@ import { getRequest, postRequest } from './utils/request'
 import { 
   RadioGroup, 
   Radio,
+  Popup,
+  Icon,
+  Toast
  } from 'vant';
 
  Vue.use(Radio);
  Vue.use(RadioGroup);
+ Vue.use(Popup);
+ Vue.use(Icon);
+ Vue.use(Toast);
 Vue.use(Vuex)
 Vue.config.productionTip = false
 Vue.prototype.$getRequest = getRequest // get请求

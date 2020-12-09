@@ -65,7 +65,20 @@ body {
   overflow-x: hidden;
   font-family: Helvetica, sans-serif;
   position: relative;
-  // font-size: 14px;
+  .van-toast{
+    font-size: 35px !important;
+    min-width: 40% ;
+    padding: 3vw !important;
+    box-sizing: border-box;
+    line-height: 6.66667vw !important;
+  }
+  .van-toast__icon {
+    font-size: 18vw;
+}
+  .van-toast--html, .van-toast--text{
+    min-width: 50% !important;
+    min-height: 10vw !important;
+  }
   a {
     text-decoration: none;
   }
@@ -89,6 +102,7 @@ body {
       }
     }
   }
+
   //iphone 6/6S/7/8 4.7英寸
   @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
     #app {
