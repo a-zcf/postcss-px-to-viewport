@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Api from '../api/api'
 import Vue from 'vue'
 import store from '../store/store'
 import * as types from '../store/types'
@@ -55,7 +54,6 @@ error => {
   }
   return Promise.reject(error.response)
 })
-// let base = Api.base
 export const postRequest = (url, params) => {
   return axios({
     method: 'post',
