@@ -7,6 +7,8 @@ import Qs from 'qs'
 import { Toast } from 'vant'
 Vue.use(Toast);
 const query = Qs.parse(location.search.substring(1))
+const baseUrl = process.env.API_ROOT
+const red_url = baseUrl+'frontpage/h5login/login?redirect_url=' // 登陆地址url
 axios.defaults.withCredentials = false
 axios.interceptors.request.use(config => {
   store.commit(types.LOGIN, query.token);
@@ -32,7 +34,7 @@ axios.interceptors.response.use(response => {
     let url = location.href
     store.commit(types.LOGOUT)
     Toast.fail(response.data.msg);
-    window.location.href = Api.red_url + url
+    window.location.href = red_url + url
   } else {
 
   }
@@ -53,11 +55,11 @@ error => {
   }
   return Promise.reject(error.response)
 })
-let base = Api.base
+// let base = Api.base
 export const postRequest = (url, params) => {
   return axios({
     method: 'post',
-    url: `${base}${url}`,
+    url: `${baseUrl}${url}`,
     data: params,
     dataType: 'jsonp',
     headers: {
@@ -68,7 +70,7 @@ export const postRequest = (url, params) => {
 export const getRequest = (url,params) => {
   return axios({
     params:params,
-    url: `${base}${url}${query.examineId}`,
+    url: `${baseUrl}${url}${query.examineId}`,
     headers: {
       'Content-Type': 'application/json'
     }
