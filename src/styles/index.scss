@@ -1,8 +1,15 @@
 @import "theme.scss";
+.index{
+  color: $mainColor;
+}
 .login{
-  color:$mainColor;
   .login-text{
     width: 750px;
     text-align: center;
+    color: $mainColor;
+  }
+  img{
+    width: 100%;
+    height: 250px;
   }
 }

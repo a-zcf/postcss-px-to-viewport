@@ -1,6 +1,7 @@
 import axios from 'axios'
 import store from '../store/store'
 import * as types from '../store/types'
+import Qs from 'qs'
 const query = Qs.parse(location.search.substring(1)) // 获取url链接参数
 const baseUrl = process.env.API_ROOT // 打包后的域名
 const red_url = baseUrl+'frontpage/h5login/login?redirect_url=' // 登陆地址url

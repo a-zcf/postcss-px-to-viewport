@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"testing"',
-  API_ROOT: '""' // 测试环境地址
+  API_ROOT: '"http://zl.haiyunzy.com/zltdd"' // 测试环境地址
 }
