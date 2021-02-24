@@ -1,0 +1,37 @@
+{
+  "id": "2362874",
+  "name": "元宵节活动项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11167968",
+      "name": "关  闭",
+      "font_class": "guanbi",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2012071",
+      "name": "金币",
+      "font_class": "qian",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "15219557",
+      "name": "失败",
+      "font_class": "shibai",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "15705329",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    }
+  ]
+}

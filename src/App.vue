@@ -1,0 +1,190 @@
+<template>
+  <div id="app">
+    <div id="iphonex-helper-body">
+      <transition :name="transitionName">
+        <router-view class="child-view"></router-view>
+      </transition>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  data () {
+    return {
+      transitionName: ''
+    }
+  },
+  watch: {
+    $route (to, from) {
+      let isBack = this.$router.isBack //监听路由变化状态前进还是后退
+      if (isBack) {
+        this.transitionName = "slide-right"
+      } else {
+        this.transitionName = "slide-left"
+      }
+      this.$router.isBack = false
+    }
+  },
+  // 解决安卓手机调出来软键盘，屏幕背景被挤压的问题
+    created() {
+      const height = document.documentElement.clientHeight;
+      window.onload = function () {
+        document.getElementById('app').style.height = `${height}px`;
+      };
+    },
+}
+</script>
+
+<style lang="scss">
+@import "./styles/index.scss";
+.child-view {
+    will-change: transform;
+    transition: all 0.4s cubic-bezier(0.55,0,0.1,1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    perspective: 1000;
+    box-sizing: border-box
+  }
+.slide-left-enter, .slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(100%)
+}
+.slide-left-leave-to, .slide-right-enter {
+  opacity: 0;
+  transform: translateX(-100%)
+}
+
+.slide-left-enter-active, .slide-left-leave-active, .slide-right-enter-active, .slide-right-leave-active {
+  transition: 0.3s;
+  position: absolute;
+  top:0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Helvetica, sans-serif;
+  position: relative;
+  a {
+    text-decoration: none;
+  }
+  p{
+    margin: 0;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+    }
+  }
+  #app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  position: relative;
+  #iphonex-helper-body {
+    height: 100%;
+    box-sizing: border-box !important;
+  }
+}
+//异型屏要再多加一点头部
+  @media screen and (max-aspect-ratio: 18/9) {
+    #app {
+      #iphonex-helper-body {
+        height: 100%;
+        box-sizing: border-box !important;
+        .index{
+           padding-top: 30% !important;
+        }
+      }
+    }
+  }
+  //iphone 6/6S/7/8 4.7英寸
+  @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    #app {
+      #iphonex-helper-body {
+        box-sizing: border-box !important;
+        .index{
+           padding-top: 27% !important;
+           .footer{
+             button{
+               width: 18% !important;
+             }
+           }
+        }
+      }
+    }
+  }
+  //iphone 6+/6S+/7+/8+ 5.5英寸
+  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+    #app {
+      #iphonex-helper-body {
+        box-sizing: border-box !important;
+        .index{
+           padding-top: 25% !important;
+           .footer{
+             button{
+               width: 18% !important;
+             }
+           }
+        }
+      }
+    }
+  }
+  //iphone X
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    #app {
+      #iphonex-helper-body {
+        box-sizing: border-box !important;
+        .index{
+           padding-top: 30% !important;
+           .footer{
+             button{
+               width: 18% !important;
+             }
+           }
+        }
+      }
+    }
+  }
+  //iphone XS MAX
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+    #app {
+      #iphonex-helper-body {
+        box-sizing: border-box !important;
+        .footer{
+             button{
+               width: 18% !important;
+             }
+           }
+      }
+    }
+  }
+  //iphone XR
+  @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    #app {
+      #iphonex-helper-body {
+        box-sizing: border-box !important;
+        .index{
+           padding-top: 30% !important;
+           .footer{
+             button{
+               width: 18% !important;
+             }
+           }
+        }
+      }
+    }
+  }
+}
+
+</style>
