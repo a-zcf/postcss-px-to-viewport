@@ -15,18 +15,21 @@
           <div
             :class="item.state == '1' ? 'me-chatcontent' : 'get-chatcontent'"
           >
-            <van-image-preview
+            <!-- <van-image-preview
               v-model="show"
               :images="img"
               :start-position="inx"
               :show-index="false"
             >
-            </van-image-preview>
+            </van-image-preview> -->
+            <div class="preview" v-show="show" @click="writeMessageFun">
+              <img :src="url" />
+            </div>
             <img
               :src="item.url"
               v-if="item.code === '00003'"
               class="urlImg"
-              @click="clickImg(index)"
+              @click="clickImg(item.url)"
             />
             <p v-else>
               <span v-html="item.text">{{ item.text }}</span>
@@ -85,6 +88,7 @@ export default {
       img: [],
       imgIdex: [],
       inx: "0",
+      url:''
     };
   },
   mounted() {
@@ -107,13 +111,20 @@ export default {
     });
   },
   methods: {
-    clickImg(index) {
+    // clickImg(index) {
+    //   this.show = true;
+    //   for (let i = 0; i < this.imgIdex.length; i++) {
+    //     if (this.imgIdex[i] === index) {
+    //       this.inx = i;
+    //     }
+    //   }
+    // },
+    writeMessageFun (ev) {
+　　　　　　this.show = false;
+　　},
+    clickImg(url) {
       this.show = true;
-      for (let i = 0; i < this.imgIdex.length; i++) {
-        if (this.imgIdex[i] === index) {
-          this.inx = i;
-        }
-      }
+      this.url = url
     },
     blur(event) {
       let This = event.currentTarget;
@@ -249,7 +260,7 @@ export default {
         that.list = [];
         setTimeout(function () {
           that.initWebSocket();
-        }, 1000);
+        }, 5000);
       }
     },
     scrollBottm() {
