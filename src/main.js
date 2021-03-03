@@ -15,7 +15,9 @@ import {
   Calendar,
   Field,
   Overlay,
-  Toast
+  Toast,
+  SwipeCell,
+  Button
 } from 'vant';
 Vue.use(Stepper);
 Vue.use(Tag);
@@ -25,6 +27,8 @@ Vue.use(Calendar);
 Vue.use(Field);
 Vue.use(Overlay);
 Vue.use(Toast);
+Vue.use(SwipeCell);
+Vue.use(Button);
 Vue.use(Vuex)
 Vue.config.productionTip = false
 Vue.prototype.$getRequest = getRequest // get请求

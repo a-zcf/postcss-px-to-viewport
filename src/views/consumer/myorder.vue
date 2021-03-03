@@ -13,7 +13,7 @@
             <span class="left">{{ item.createTime }}</span>
             <span class="right color1">已兑换</span>
           </p>
-          <p v-for="(it, index) in item.itemList" :key="index">
+          <p v-for="(it, index) in item.goodsList" :key="index">
             <span class="name">{{ it.title }}</span>
             <span class="number">×{{ it.num }}</span>
             <span class="longbi"
@@ -83,8 +83,8 @@ export default {
           this.list = this.list.concat(arr);
           this.list.forEach((item) => {
             let score = 0;
-            for (let i = 0; i < item.itemList.length; i++) {
-              score = score + item.itemList[i].score * item.itemList[i].num;
+            for (let i = 0; i < item.goodsList.length; i++) {
+              score = score + item.goodsList[i].score * item.goodsList[i].num;
             }
             item.sum = score;
           });

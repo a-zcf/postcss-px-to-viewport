@@ -3,11 +3,10 @@
     <ul>
         <li v-for="(item,index) in list" :key="index">
             <p>商品名称：{{item.title}}</p>
-            <p>需兑换积分：{{item.score}}龙币</p>
+            <p>需兑换积分：<b class="score">{{item.score}}龙币</b></p>
             <p class="flex">
-              <span class="total">总库存：{{item.stock}}</span>
               <span class="sold">已售：{{item.sales}}</span>
-              <span class="sold">剩余：{{item.nowStock}}</span>
+              <span class="sold">剩余：{{item.currentStock}}</span>
             </p>
         </li>
     </ul>
@@ -27,7 +26,6 @@ export default {
     let that = this
     that.$getRequest(goodsList).then(res => {
       if(res.data.code === 0){
-        console.log(res)
         this.list = res.data.data
       }
     })

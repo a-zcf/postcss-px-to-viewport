@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13235907",
+      "name": "扫一扫",
+      "font_class": "sao1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "9771700",
+      "name": "关 闭 (1)",
+      "font_class": "guanbi1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
       "icon_id": "1614096",
       "name": "导航",
       "font_class": "icon-system-fi-navigation",
@@ -32,13 +46,6 @@
       "font_class": "chakandianpu1",
       "unicode": "e950",
       "unicode_decimal": 59728
-    },
-    {
-      "icon_id": "7543272",
-      "name": "添加库存",
-      "font_class": "tianjiakucun",
-      "unicode": "e7f1",
-      "unicode_decimal": 59377
     },
     {
       "icon_id": "9715320",

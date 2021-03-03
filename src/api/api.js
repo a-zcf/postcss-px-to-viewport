@@ -1,6 +1,7 @@
 const urls = {
   authentication: '/api/flinemall/shop/authentication', // 店铺认证接口
-  info: '/api/flinemall/shop/info/oneself', // 获取店铺接口
+  // info: '/api/flinemall/shop/info/oneself', // 获取店铺接口
+  verify:'/api/flinemall/shop/admin/verify', // 店铺认证接口
   goodsList: '/api/flinemall/shop/goodsList', // 商品管理页面 商品列表接口
   orderList: '/api/flinemall/shop/orderList', // 店铺的订单列表接口
   orderGoodsList: '/api/flinemall/shop/orderGoodsList', // 店铺的订单商品合计数量接口
@@ -22,6 +23,7 @@ const urls = {
   consumerInfo: '/api/flinemall/consumer/info', // 消费者信息接口
   myOrderList: '/api/flinemall/consumer/orderList', // 我的订单列表信息接口
   
+  // userType: '/api/flinemall/userType', // 调用微信配置Config参数接口
   getJsSdkConfig: '/api/jsSdkConfig/getJsSdkConfig', // 调用微信配置Config参数接口
 }
 module.exports = urls

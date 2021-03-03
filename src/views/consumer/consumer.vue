@@ -9,14 +9,18 @@
      <div class="commodity-exchange" v-show="show2">
        <ul>
          <li v-for ="(item,index) in list" :key="index">
-           <p>
-             <span class="name">{{item.title}}</span>
-             <i class="iconfont icon-guanbi guanbi-size" @click="clickGuanbi(item.barcode)"></i>
-           </p>
-           <p>
-             <span class="currency-color">{{item.score}}龙币</span>
-             <van-stepper :value="item.num" theme="round" button-size="22" disable-input @plus="clickAdd(item.barcode)" @minus="clickMinus(item.barcode)"/>
-           </p>
+            <van-swipe-cell left-width ="200px">
+              <div class="content">
+                <p class="title">{{item.title}}</p>
+                <p class="l-r">
+                  <span class="l"><i class="iconfont icon-jinbi"></i><b>{{item.score}}龙币</b></span>
+                  <van-stepper class="r" :value="item.num" theme="round" button-size="22" disable-input @plus="clickAdd(item.barcode)" @minus="clickMinus(item.barcode)"/>
+                </p>
+              </div>
+              <template #right>
+                <van-button square text="删除" type="danger" class="delete-button" @click="clickGuanbi(item.barcode)"/>
+              </template>
+            </van-swipe-cell>
          </li>
        </ul>
        <div class="footer">
@@ -118,7 +122,7 @@ export default {
       this.result = barCode
        map.delete(barCode)
        that.list = []
-      map.forEach(function (item, key) {
+       map.forEach(function (item, key) {
         that.value = item.num
         that.list.push(item)
       });
@@ -194,13 +198,17 @@ export default {
       let goodsList = {goodsList:that.list,shopCode:that.shopCode}
       that.$postRequest(order,goodsList).then( res => {
          if(res.data.code === 0){
+           map.clear()
            that.list = []
-           that.getLongCoin()
            let params = JSON.stringify(res.data.data)
            that.$router.push({path:'/success?obj='+encodeURIComponent(params)})
          }else{
            that.list = []
            that.getLongCoin()
+           map.forEach(function (item, key) {
+            that.value = item.num
+            that.list.push(item)
+          });
            that.$toast.fail(res.data.msg)
          }
       })

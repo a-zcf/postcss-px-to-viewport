@@ -1,8 +1,8 @@
 <template>
   <div class="personalcenter">
     <div class="per-head">
-        <img :src="avatarUrl" />
-        <p>{{nickname}}</p>
+        <img :src="avatarUrl != '' ?avatarUrl : headImg" />
+        <p>{{nickname == ''?'未获取信息':nickname}}</p>
     </div>
     <ul>
         <router-link to="/myorder">

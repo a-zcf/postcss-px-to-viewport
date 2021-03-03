@@ -9,79 +9,92 @@
     font-size: 100px;
   }
 }
+
 /* 跳转消费者、商家、配送员过渡页 */
 .login {
-  .binding{
-    width: 80%;
-    margin:50% auto auto auto;
-    background-color: $whiteColor;
-    border-radius: 15px;
-    box-sizing: border-box;
-    padding: 0px 0px 70px 0px;
-    h3{
-      height: 90px;
-      line-height: 90px;
-      background-color: $textBlueColor;
-      color: $whiteColor;
-      border-radius: 15px 15px 0px 0px;
-      text-align: center;
+  
+}
+/* 绑定框 */
+.binding{
+  width: 80%;
+  margin:50% auto auto auto;
+  background-color: $whiteColor;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 0px 0px 70px 0px;
+  h3{
+    height: 90px;
+    line-height: 90px;
+    background-color: $textBlueColor;
+    color: $whiteColor;
+    border-radius: 15px 15px 0px 0px;
+    text-align: center;
+  }
+  .field{
+    width: 95%;
+    margin: auto;
+    .van-field{
+      margin: 35px 0px;
     }
-    .field{
-      width: 95%;
-      margin: auto;
-      .van-field{
-        margin: 35px 0px;
-      }
-      .van-cell::after{
-        border: none;
-      }
-      .van-field__clear{
-        font-size: 30px;
-      }
-      .van-cell{
-        font-size: 30px;
-        padding: 0px;
-        .van-field__label{
-          height: 70px;
-          line-height: 70px;
-        }
-        .van-cell__value{
-          height: 70px;
-          display: flex;
-          align-items: center;
-          border-bottom: 1px solid $greyColor;
-          box-sizing: border-box;
-          padding: 10px;
-        }
-        .van-field__body{
-          width: 100%;
-        }
-      }
+    .van-cell::after{
+      border: none;
     }
-    .but{
-      width: 80%;
-      margin: 70px auto auto auto;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      button{
-        width: 40%;
-        height: 75px;
-        background-color: $textBlueColor;
-        border: none;
-        border-radius: 100px;
-        color: $whiteColor;
+    .van-field__clear{
+      font-size: 30px;
+    }
+    .van-field__control{
+      height: 8vw;
+      line-height: 8vw;
+    }
+    .van-cell{
+      font-size: 30px;
+      padding: 0px;
+      .van-field__label{
+        height: 70px;
+        line-height: 70px;
+      }
+      .van-cell__value{
+        height: 70px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $greyColor;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+      .van-field__body{
+        width: 100%;
       }
     }
   }
+  .but{
+    width: 80%;
+    margin: 70px auto auto auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    button{
+      width: 40%;
+      height: 75px;
+      background-color: $textBlueColor;
+      border: none;
+      border-radius: 100px;
+      color: $whiteColor;
+    }
+  }
 }
-
+.guanbi-but{
+  margin-top: 150px;
+  text-align: center;
+  i{
+    font-size: 70px;
+    color: $whiteColor;
+  }
+}
 /* 消费者 商品兑换*/
 .consumer {
   height: 100%;
   position: relative;
   overflow: hidden;
-
   .scan-code {
     // height: 100%;
 
@@ -118,54 +131,85 @@
   .commodity-exchange {
     height: 100%;
     overflow: auto;
-
-    ul {
-      margin-bottom: 250px;
-      li {
+    background-color: rgb(235, 235, 235);
+    ul{
+      margin:30px auto 258px auto;
+      li{
         box-sizing: border-box;
         width: 95%;
-        margin: auto;
-        padding: 15px;
-        border-bottom: 1px solid $LightGreyColor;
-
-        p {
-          display: flex;
-          flex-wrap: nowrap;
-          align-items: center;
-          justify-content: space-between;
-          white-space: nowrap;
-          overflow: hidden;
-          line-height: 65px;
-
-          .van-stepper__input {
-            font-size: 30px !important;
-          }
-          .van-stepper__plus{
-            background-color: $blueColor;
-          }
-          .van-stepper__minus{
-            color: $orangeColor;
-            border: 1px solid $orangeColor;
-          }
-          span {
-            width: 78%;
-            margin-right: 15px;
-            white-space: nowrap;
+        margin: auto auto 30px auto;
+        background-color: $whiteColor;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 10px 10px 5px $bgGreyColor;
+        .van-button{
+          width: 100px;
+          height: 100%;
+          border-radius: 0px 20px 20px 0px;
+          background-color: $mainColor;
+          border:1px solid $mainColor;
+          font-size: 30px;
+        }
+        .van-stepper__plus{
+          background-color: $blueColor;
+        }
+        .van-stepper__input{
+          width: 50px;
+          font-size: 30px;
+          // color: $whiteColor;
+        }
+        .van-stepper__minus{
+          color: $whiteColor;
+          border: 1px solid $orangeColor;
+          background-color: $mainColor;
+        }
+        .content{
+          width: 100%;
+          box-sizing: border-box;
+          padding: 15px 0px;
+          p{
+            line-height: 80px;
+            // color: $whiteColor;
+            box-sizing: border-box;
             overflow: hidden;
-            text-align: left;
+            white-space: nowrap;
+            text-align:left;
             text-align: justify;
           }
-
-          .name {
+          .title{
+            width: 70%;
+            margin: auto;
             text-overflow: ellipsis;
+            text-align: center;
           }
-
-          .currency-color {
-            color: $mainColor;
-          }
-
-          .guanbi-size {
-            font-size: 28px;
+          .l-r{
+            width: 95%;
+            margin: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            .l{
+              width: 70%;
+              display: flex;
+              align-items: center;
+              flex-wrap: nowrap;
+              overflow: hidden;
+              i{
+                margin-right: 15px;
+                color: $orangeColor;
+                font-size: 50px;
+              }
+              b{
+                color: $mainColor;
+              }
+            }
+            .r{
+              width: 30%;
+              box-sizing: border-box;
+              padding-left: 15px;
+              text-align: right;
+            }
           }
         }
       }
@@ -455,110 +499,31 @@
     }
   }
 }
-.withdrawal-title{
-  background-color: $whiteColor;
-  margin-top: 15px;
-  .title{
-    width: 95%;
-    height: 100px;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    .shu{
-      display: block;
-      width: 2%;
-      background-color: $skyBlueColor;
-      height: 70px;
-      margin-right: 15px;
-    }
-    .tixian{
-      width: 80%;
-    }
-    .tixian-but{
-      width: 18%;
-      background-color: $skyBlueColor;
-      color: $whiteColor;
-      border: none;
-      border-radius: 10px;
-    }
-  }
-  ul{
-    li{
-      width: 95%;
-      height: 100px;
-      display: flex;
-      flex-wrap: nowrap;
-      overflow: hidden;
-      justify-content: space-between;
-      margin: auto;
-      align-items: center;
-      border-bottom: 1px solid $LightGreyColor;
-      box-sizing: border-box;
-      padding: 0px 30px;
-      .detailed{
-        color:$skyBlueColor;
-      }
-    }
-  }
-}
-}
-/* 提现明细 */
-.detailed{
-  height: 100%;
-  .title{
-    height: 100px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    span{
-      width: 50%;
-      text-align: center;
-      box-sizing: border-box;
-      padding: 20px;
-      font-weight: 700;
-    }
-  }
-  .hengxian{
-    width: 100%;
-    height: 15px;
-    background-color: $LightGreyColor;
-  }
-  ul{
-    li{
-      height: 100px;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid $LightGreyColor;
-      .name{
-        text-overflow: ellipsis;
-      }
-      span{
-        width: 50%;
-        text-align: center;
-        box-sizing: border-box;
-        padding:0px 20px;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      .number{
-        color:$mainColor;
-      }
-    }
-  }
 }
 /* 商品管理 */
+.commodityadmin::-webkit-scrollbar {
+  display: none;
+}
 .commodityadmin{
   height: 100%;
+  background-color: $LightGreyColor;
+  overflow-x: hidden;
+  overflow-y: scroll;
   ul{
+    width: 95%;
+    margin: auto;
+    box-sizing: border-box;
+    padding-bottom: 25px;
     li{
       box-sizing: border-box;
       padding: 25px;
-      border-bottom: 1px solid $LightGreyColor;
+      background-color: $whiteColor;
+      margin-top: 25px;
+      border-radius: 15px;
+      box-shadow: 10px 10px 5px $bgGreyColor;
+      .score{
+        color: $mainColor;
+      }
       p{
         line-height: 65px;
         overflow: hidden;
@@ -574,11 +539,9 @@
           white-space: nowrap;
           overflow: hidden;
         }
-        .total{
-          width: 37%;
-        }
         .sold{
-          width: 30%;
+          width: 50%;
+          color: $greyColor;
         }
       }
     }

@@ -25,7 +25,7 @@
                 <span class="left">{{ item.createTime }}</span>
                 <span class="right color1">已兑换</span>
               </p>
-              <p v-for="(it, index) in item.itemList" :key="index">
+              <p v-for="(it, index) in item.goodsList" :key="index">
                 <span class="name">{{ it.title }}</span>
                 <span class="number">×{{ it.num }}</span>
                 <span class="longbi"
@@ -45,7 +45,7 @@
         </van-tab>
         <van-tab title="近一个月" name="30" class="list">
           <p class="total">
-            <span>订单数：{{ totalCount }}</span>
+            <span>订单数：{{ totalCount }}笔</span>
             <span class="mingxi"
               ><router-link
                 :to="{ path: '/detailedstatistics', query: { active: active } }"
@@ -60,7 +60,7 @@
                 <span class="left">{{ item.createTime }}</span>
                 <span class="right color1">已兑换</span>
               </p>
-              <p v-for="(it, index) in item.itemList" :key="index">
+              <p v-for="(it, index) in item.goodsList" :key="index">
                 <span class="name">{{ it.title }}</span>
                 <span class="number">×{{ it.num }}</span>
                 <span class="longbi"
@@ -102,7 +102,7 @@
             @confirm="onConfirmEnd"
           />
           <p class="total">
-            <span>订单数：{{ totalCount }}笔</span>
+            <span>订单数：{{list.length == 0 ? 0 : totalCount }}笔</span>
             <span class="mingxi"
               ><router-link
                 :to="{ path: '/detailedstatistics', query: { active:active,startTime:startTime,endTime:endTime } }"
@@ -117,7 +117,7 @@
                 <span class="left">{{ item.createTime }}</span>
                 <span class="right color1">已兑换</span>
               </p>
-              <p v-for="(it, index) in item.itemList" :key="index">
+              <p v-for="(it, index) in item.goodsList" :key="index">
                 <span class="name">{{ it.title }}</span>
                 <span class="number">×{{ it.num }}</span>
                 <span class="longbi"
@@ -177,10 +177,17 @@ export default {
     };
   },
   mounted() {
-    let that = this;
   },
   methods: {
     clickQuery() {
+      if(this.startTime == ''){
+        this.$toast('请选择需查询的时间范围！');
+        return
+      }
+      if(this.endTime == ''){
+        this.$toast('请选择需查询的时间范围！');
+        return
+      }
       this.mescroll.resetUpScroll();
     },
     onChange(name) {

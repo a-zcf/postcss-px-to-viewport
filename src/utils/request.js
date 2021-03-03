@@ -5,8 +5,6 @@ import Qs from 'qs'
 const query = Qs.parse(location.search.substring(1)) // 获取url链接参数
 const baseUrl = process.env.API_ROOT // 打包后的域名
 const red_url = baseUrl+'/frontpage/h5login/flinemall?redirect_url=' // 登陆地址url
-localStorage.setItem('shopCode',query.shopCode)
-localStorage.setItem('type',query.type)
 axios.defaults.withCredentials = false
 axios.interceptors.request.use(config => {
   store.commit(types.LOGIN, query.token);

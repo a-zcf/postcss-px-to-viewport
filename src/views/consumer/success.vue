@@ -6,7 +6,7 @@
         <span class="span1">订单详情：</span>
         <span class="span2"></span>
      </p>
-     <p class="details-time" v-for="(item,index) in lists.itemList" :key="index">
+     <p class="details-time" v-for="(item,index) in lists.goodsList" :key="index">
         <span class="gift-bag">{{item.title}}</span>
         <span class="number">×{{item.num}}</span>
         <span class="long-bi">{{item.score * item.num}}龙币</span>
