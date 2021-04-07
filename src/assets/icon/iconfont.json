@@ -1,0 +1,121 @@
+{
+  "id": "2332958",
+  "name": "线下商城",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13235907",
+      "name": "扫一扫",
+      "font_class": "sao1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "9771700",
+      "name": "关 闭 (1)",
+      "font_class": "guanbi1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1614096",
+      "name": "导航",
+      "font_class": "icon-system-fi-navigation",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "5787519",
+      "name": "拨打电话",
+      "font_class": "bodadianhua",
+      "unicode": "e781",
+      "unicode_decimal": 59265
+    },
+    {
+      "icon_id": "6757159",
+      "name": "查看店铺",
+      "font_class": "chakandianpu",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "2340607",
+      "name": "查看店铺",
+      "font_class": "chakandianpu1",
+      "unicode": "e950",
+      "unicode_decimal": 59728
+    },
+    {
+      "icon_id": "9715320",
+      "name": "配送记录",
+      "font_class": "peisongjilu",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "11469546",
+      "name": "我的订单",
+      "font_class": "wodedingdan1",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "16133972",
+      "name": "我的订单",
+      "font_class": "wodedingdan2",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "13904005",
+      "name": "金币",
+      "font_class": "jinbi",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "5960106",
+      "name": "我的订单",
+      "font_class": "dingdan",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1953750",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5801996",
+      "name": "成功",
+      "font_class": "chenggong1",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "13245110",
+      "name": "我 的",
+      "font_class": "wode",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "8100449",
+      "name": "关  闭",
+      "font_class": "guanbi",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "2126454",
+      "name": "商品",
+      "font_class": "shangpin",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    }
+  ]
+}
