@@ -1,0 +1,996 @@
+@import "theme.less";
+.icon-zanwushuju{
+  display: block;
+  text-align: center;
+  font-size: 200px;
+  margin-top: 25%;
+  color: @backgroundShallow;
+}
+// 首页
+.pushmore-index{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: @whiteColor;
+  .head-top{
+    position: relative;
+ .head{
+   width: 100%;
+   height: 140px;
+   background: url(../assets/img/topImg.png) no-repeat;
+   background-size: 100% 100%;
+   overflow: hidden;
+  .flex-title{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 15px auto auto auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    .wei{
+      margin-left: 10px;
+      color: @whiteColor;
+    }
+    .headless{
+      width:50px;
+      height: 50px;
+      border-radius: 100px;
+    }
+    .head-text{
+      margin-left: 15px;
+      color: @whiteColor;
+      width: 80%;
+      .p1{
+        text-overflow: ellipsis;
+      }
+      p{
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align:left;
+        text-align: justify;
+      }
+    }
+  }
+  //  width: 100%;
+  //  height: 100px;
+  //  background-color: @backgroundBlue;
+  //  color: @whiteColor;
+  //  display: flex;
+  //  flex-wrap: nowrap;
+  //  align-items: center;
+  //  background-image: linear-gradient(to left, #19D5FD, #1D62F0);
+  //  img{
+  //    width: 80px;
+  //    height: 80px;
+  //    border-radius: 50px;
+  //    margin: 0px 20px;
+  //  }
+  //  .head-text{
+  //    width: 62%;
+  //    height: 80px;
+  //    line-height: 27px;
+  //    overflow: hidden;
+  //    p{
+  //      white-space: nowrap;
+  //    }
+  //  }
+ }
+ .jian-bi-pai{
+  width: 90%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: -38px;
+  background-color: @whiteColor;
+  margin: auto 5%;
+  border-radius: 10px;
+  padding: 12px 0px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 8px 0px @backgroundShallow;
+  .long-bi{
+    width: 40%;
+    text-align: center;
+    // border-left: 1px solid @backgroundShallow;
+    // border-right: 1px solid @backgroundShallow;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    p{
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      .left{
+        width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .right{
+        margin-left: 5px;
+        width: 38%;
+        background-color: @greyColor;
+        border-radius:15px ;
+        color: @whiteColor;
+      }
+    }
+  }
+  .jian-pai{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    span{
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+  .bi{
+    margin-bottom: 8px;
+  }
+  .font-style1{
+    color: @orangeColor;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .font-style2{
+    color: @backgroundBlue;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .font-style3{
+    color: @greyColor;
+  }
+}
+}
+ .menu-list{
+   width: 90%;
+   margin:60px auto auto auto;
+   background-color: @backgroundWhite;
+   box-shadow: 0px 2px 10px 0px @backgroundShallow;
+   border-radius: 10px;
+   .list{
+    //  width: 95%;
+     height: 50px;
+     margin: auto;
+     display: flex;
+     flex-wrap: nowrap;
+     align-items: center;
+     box-sizing: border-box;
+     padding: 10px;
+    //  border-bottom: 1px solid @backgroundLightGrey;
+     position: relative;
+     .icon{
+       width: 10%;
+       text-align: center;
+       font-size: 28px;
+       color: @borderColor;
+     }
+     .icon-middle{
+      color: @orangeColor;
+     }
+      .card-circle{
+        position: absolute;
+        left: 34%;
+        font-size: 18px;
+        animation: circle 1s ease infinite both;
+        color: @purpleColor;
+      }
+      .card-finger{
+        position: absolute;
+        top: 29%;
+        left: 35.3%;
+        font-size: 25px;
+        animation: finger 1s ease infinite both;
+        color: @purpleColor;
+      }
+     .icon-right{
+       color: @lightOrangeColor;
+     }
+     .middle-text{
+       width:80%;
+       margin-left: 10px;
+       font-size: 15px;
+       display: flex;
+       flex-wrap: nowrap;
+       align-items: center;
+       overflow: hidden;
+       white-space: nowrap;
+       .card{
+        // color: @pinkColor;
+        font-size: 18px;
+         animation: finger 1s ease infinite both;
+       }
+       .remaining-time{
+          color: @orangeColor;
+          display: flex;
+          flex-wrap: nowrap;
+          font-size: 12px;
+          margin-left: 35px;
+          .remaining-icon{
+            display: block;
+            margin-top: -5px;
+          }
+       }
+     }
+     .icon-more{
+       color: rgb(165, 164, 164);
+       font-size: 15px;
+     }
+     .none-border{
+       border: none;
+     }
+   }
+ }
+
+ .reminder{
+   width: 90%;
+   margin: 20px auto auto auto;
+   padding: 10px;
+   box-sizing: border-box;
+   display: flex;
+   flex-wrap: nowrap;
+   align-items: center;
+  //  background-color: @backgroundWhite;
+  border-radius: 8px;
+   box-shadow: 0px 2px 10px 0px @backgroundShallow;
+   
+   .reminder-icon{
+     width: 12%;
+     text-align: center;
+     font-size: 20px;
+     color: @orangeColor;
+     margin-right: 5px;
+   }
+ }
+
+ .activity-rules-desc{
+   width: 90%;
+   margin: 20px auto;
+   overflow: hidden;
+   box-sizing: border-box;
+   padding: 10px 15px;
+  //  background-color: @backgroundWhite;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px 0px @backgroundShallow;
+  h3{
+    margin: 10px 0px;
+    color: @greyColor;
+    i{
+      margin-right: 10px;
+    }
+  }
+  p{
+    text-align:left;
+    text-align: justify;
+    // text-indent:2em;
+    box-sizing: border-box;
+    padding: 5px 0px;
+    line-height: 25px;
+    color: @greyColor;
+  }
+ }
+ .overlay{
+ .content{
+   width: 90%;
+   background-color: @whiteColor;
+   border-radius: 10px;
+   margin: 50% auto auto auto;
+   h3{
+     text-align: center;
+     height: 40px;
+     line-height: 40px;
+     background: url(../assets/img/topImg.png) no-repeat;
+     background-size: 100% 100%;
+     color: @whiteColor;
+     border-radius: 10px 10px 0px 0px;
+   }
+   ul{
+     li{
+       box-sizing: border-box;
+       padding: 10px;
+       display: flex;
+       flex-wrap: nowrap;
+       align-items: center;
+       color: @greyColor;
+       span{
+         width: 33.33%;
+         text-align: center;
+       }
+       .jiangli{
+         color: @orangeColor;
+       }
+       .tj-number{
+        color: @backgroundBlue;
+       }
+     }
+   }
+   .lin{
+     width: 90%;
+     height: 45px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: auto;
+     border-top: 1px solid @backgroundShallow;
+     color: @backgroundBlue;
+     font-size: 16px;
+   }
+}
+.gb-icon{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  i{
+    font-size: 30px;
+    color: @whiteColor;
+  }
+}
+}
+}
+
+// 不符合页
+.non-conformity{
+  width: 100%;
+  height: 100%;
+  background-color: @backgroundBlue;
+  .nc-tips{
+    width: 100px;
+    height: 100px;
+    border-radius:50px;
+    background-color: @backgroundWhite;
+    color: @orangeColor;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    margin: 150px auto auto auto;
+  }
+  .nc-text{
+    color: @whiteColor;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+// 订单管理
+.order-admin{
+  width: 100%;
+  overflow: hidden;
+  .order-list{
+    width: 100%;
+    li{
+      width: 100%;
+      box-sizing: border-box;
+      background-color: @backgroundLightGrey;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-top: 15px;
+      .left{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        line-height: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        .left-top{
+          font-size: 15px;
+          font-weight: 600;
+        }
+        .left-bottom{
+          color: @greyColor;
+        }
+      }
+      .right{
+        width: 20%;
+        height: 32px;
+        border: none;
+        background-color: @lightOrangeColor;
+        color: @whiteColor;
+        border-radius: 5px;
+      }
+    }
+  }
+  .van-overlay{
+  .wrapper{
+    width: 80%;
+    margin: 50% auto auto auto;
+    background-color: @whiteColor;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    h3{
+      text-align: center;
+      color: @redColor;
+      padding: 15px 0px 0px 0px;
+    }
+    p{
+      text-align: center;
+      font-size: 16px;
+      margin: 15px 0px;
+    }
+    .p1{
+      color: @greyColor;
+    }
+    .p2{
+      color: @blueColor;
+      padding: 0px 10px;
+    }
+  }
+  .clear{
+    margin: 50px 0px 0px 45%;
+    color: @whiteColor;
+    font-size: 40px;
+  }
+}
+}
+
+// 我的团队
+.my-team{
+  height: 100%;
+  .team-top{
+    height: 110px;
+    background: url(../assets/img/topImg.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    img{
+      width: 80px;
+      height: 80px;
+      margin-right: 15px;
+      border-radius: 100px;
+    }
+    .text{
+      width: 72%;
+      line-height: 25px;
+      color: @whiteColor;
+      p{
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .name{
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .tab{
+    .van-tabs__line{
+      background-color: @backgroundBlue;
+    }
+    .van-tab--active {
+      color: @backgroundBlue;
+    }
+    .van-tab__pane{
+      width: 90%;
+      margin:20px auto auto auto;
+    }
+    ul{
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 2px 15px 0px @backgroundShallow;
+      box-sizing: border-box;
+      padding: 10px;
+      li{
+        height: 45px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        color: @greyColor;
+        .left{
+          width: 30%;
+        }
+        .middle{
+          width: 64%;
+          margin-right: 10px;
+          text-align: right;
+          color: @backgroundBlue;
+          font-size: 16px;
+          font-weight: 700;
+        }
+        .right{
+          width: 5%;
+          color: rgb(168, 167, 167);
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  
+  // background-color: @whiteColor;
+  // height: 100%;
+  // overflow: hidden;
+  // .head-img{
+  //   // height: 100px;
+  //   img{
+  //     width: 100%;
+  //     height: 150px;
+  //   }
+  // }
+
+  // .title{
+  //   text-align: center;
+  //   font-size: 14px;
+  //   font-weight: 500;
+  //   padding: 10px 5px 0px 5px;
+  //   box-sizing: border-box;
+  //   color: @greyColor;
+  // }
+  // .list{
+  //   width: 100%;
+  //   box-sizing: border-box;
+  //   li{
+  //     width: 90%;
+  //     // margin:25px auto auto auto;
+  //     margin:auto;
+  //     display: flex;
+  //     flex-wrap: nowrap;
+  //     align-items: center;
+  //     border-bottom: 1px solid @backgroundLightGrey;
+  //     padding: 18px 0px;
+  //     .list-img{
+  //       width: 13.335%;
+  //       height: 45px;
+  //       border-radius: 50px;
+  //       margin-right: 15px;
+  //     }
+  //     .name-time{
+  //       display: flex;
+  //       flex-direction: column;
+  //       line-height: 21px;
+  //       overflow: hidden;
+  //       .name{
+  //         font-size: 15px;
+  //         font-weight: 600;
+  //         white-space: nowrap;
+  //       }
+  //       .time{
+  //         color: @greyColor;
+  //         white-space: nowrap;
+  //       }
+  //     }
+  //  }
+  // }
+}
+
+//我的推荐二维码
+.my-qr-code{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  .codeImg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -999;
+  }
+  
+  .headimgurl{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 50px auto auto auto;
+    border-radius: 100px;
+  }
+  .name{
+    width: 50%;
+    margin:10px auto auto auto;
+    text-align: center;
+    color: @whiteColor;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .font{
+    width: 60% !important;
+    font-size: 22px;
+  }
+  .qrcode{
+    display: flex;
+    justify-content: center;
+    margin-top:20%;
+    z-index: 9999;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  
+}
+
+@keyframes finger{
+  0% {
+    transform: none;
+}
+70% {
+    transform: scale3d(.8, .8, .8);
+}
+100% {
+    transform: none;
+}
+}
+
+@keyframes circle {
+  0% {
+    opacity: 0;
+    transform: scale3d(0, 0, 0);
+}
+70% {
+    opacity: 1;
+    transform: scale3d(1.2, 1.2, 1.2);
+}
+100% {
+    opacity: 0;
+    transform: scale3d(0, 0, 0);
+}
+}
+ // 兑换礼品成功页
+ .exchange-success{
+   width: 100%;
+   overflow: hidden;
+   .success{
+     width: 100%;
+     margin-top: 45px;
+    .icon-success{
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 100px;
+      color: @greenColor;
+    }
+    p{
+      margin-top: 10px;
+      padding: 0px 10px;
+      text-align: center;
+      font-size: 20px;
+      color: @greenColor;
+    }
+   }
+   .chance-to-draw{
+     width: 100%;
+     margin-top: 30px;
+     p{
+       color: @redColor;
+       text-align: center;
+       font-size: 16px;
+     }
+     .scraping-card{
+      width: 100%;
+      margin-top: 10px;
+      padding: 20px 0;
+      background-color: red;
+      .canvas-box{
+        position: relative;
+        overflow: hidden;
+        width: 85%;
+        height: 120px;
+        border-radius: 10px;
+        background-color: #FFF;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        .winning-results{
+          width: 100%;
+          height:85%;
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          .winres-text{
+            width: 76%;
+            text-align: center;
+          }
+          .winres-but{
+            width: 20%;
+            height: 105px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 600;
+            border: none;
+            color: @whiteColor;
+            background-color: @greenColor;
+          }
+        }
+      }
+      #canvas{
+        width: 96%;
+        height:90%;
+        position: absolute;
+        left: 2%;
+        top: 5%;
+        background-color: transparent;
+      }
+     }
+   }
+   .exchange-tips{
+     width: 95%;
+     margin: auto;
+     border: 1px dashed @greyColor;
+     border-radius: 5px;
+     box-sizing: border-box;
+     margin-top: 20px;
+     padding: 10px;
+     display: flex;
+     flex-wrap: nowrap;
+     .tips-text{
+       width: 25%;
+       color: @redColor;
+     }
+     .describe-text{
+      width: 88%;
+      color: @greyColor;
+      line-height: 22px;
+      text-align:left;
+      text-align: justify;
+     }
+   }
+ }
+ /* 排行榜 */
+ .rankinglist{
+   width: 100%;
+   height: 100%;
+   .rankinglist-topImg{
+     width: 100%;
+     height: 120px;
+   }
+   .list{
+    width: 100%;
+     ul{
+      width: 100%;
+       li{
+         width: 95%;
+         height: 100px;
+         display: flex;
+         flex-wrap: nowrap;
+         align-items: center;
+         margin:20px auto auto auto;
+         box-shadow: 0px 0px 10px 0px @backgroundShallow;
+         border-radius: 10px;
+         box-sizing: border-box;
+         padding: 0px 10px;
+         .No{
+           width: 80px;
+           height: 80px;
+         }
+         .text{
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap;
+          overflow: hidden;
+          color: @greyColor;
+          font-weight: 700;
+          font-size: 17px;
+         }
+         .head-portrait{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          border: 2px solid @backgroundShallow;
+          margin: 0px 10px;
+         }
+         .name-con{
+           width: 52%;
+           line-height: 25px;
+           p{
+             width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            color: @greyColor;
+            span{
+              color: @orangeColor;
+            }
+           }
+           .name{
+             font-size: 17px;
+             text-overflow: ellipsis;
+             color: @blackColor;
+           }
+         }
+       }
+     }
+   }
+ }
+ /* 等级客户 */
+ .gradecustomers{
+    height: 100%;
+    ul{
+      width: 100%;
+      margin-top: 10px;
+      li{
+        width: 95%;
+        margin:auto auto 20px auto;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 15px;
+        box-shadow: 0px 3px 10px 0px rgb(199, 198, 198);
+        border-radius:15px;
+        img{
+          width: 80px;
+          height: 80px;
+          border-radius: 100px;
+          margin-right: 15px;
+        }
+        .right{
+          width:75% ;
+          p{
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            color: @greyColor;
+          }
+          .title{
+           display: flex;
+           flex-wrap: nowrap;
+           align-items: center;
+           justify-content: space-between;
+           margin-bottom: 5px;
+           .name{
+             width: 85%;
+             font-size: 16px;
+             font-weight: 700;
+             color: @blackColor;
+             overflow: hidden;
+             white-space: nowrap;
+             text-overflow: ellipsis;
+           }
+           .saoma{
+            width: 25%;
+            text-align: right;
+            color: @orangeColor;
+           }
+          }
+        }
+      }
+    }
+ }
+ /* 推广奖励明细 */
+ .awarddetails{
+   height: 100%;
+   overflow: hidden;
+   .title{
+     width: 100%;
+     height: 50px;
+     line-height: 50px;
+     display: flex;
+     flex-wrap: nowrap;
+     align-items: center;
+     background: url(../assets/img/topImg.png) no-repeat;
+     background-size: 100% 100%;
+     span{
+       width: 33.3%;
+       text-align: center;
+       color: @whiteColor;
+       font-size: 16px;
+       font-weight: 700;
+     }
+   }
+   .tishi{
+     height: 35px;
+     line-height: 35px;
+     text-align: center;
+     background-color: @backgroundLightGrey;
+     color: @greyColor;
+     font-size: 12px;
+   }
+   .roll{
+    display: block;
+    height: 100%;
+    overflow: auto;
+   ul{
+    margin-bottom: 180px;
+     li{
+      width: 95%;
+      height: 50px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      box-sizing: border-box;
+      margin: auto;
+      border-bottom: 1px solid @backgroundShallow;
+      span{
+        width: 33.3%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        color: @greyColor;
+      }
+      .number{
+        margin: 0px 10px;
+        color: @blueColor;
+        font-size: 16px;
+      }
+      .longbi{
+        color: @orangeColor;
+        font-size: 16px;
+      }
+     }
+   }
+  }
+ }
+ /* 推广奖励 */
+ .promotionaward{
+   height: 100%;
+   ul{
+     width: 100%;
+     li{
+      width: 90%;
+      margin:25px auto auto auto;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgb(199, 198, 198);
+      box-sizing: border-box;
+      padding: 10px;
+      .top-title{
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        box-sizing: border-box;
+        img{
+          width: 40px;
+          height: 40px;
+          border-radius: 100px;
+          margin-right: 10px;
+        }
+        span{
+          width: 85%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-weight: 700;
+        }
+      }
+      .bottom-content{
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-top: 15px;
+        p{
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          span{
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 25px;
+          }
+          .time{
+            color: @greyColor;
+          }
+        }
+        .longbi{
+          width: 20%;
+          text-align: right;
+          overflow: hidden;
+          white-space: nowrap;
+          font-size: 18px;
+          color: @redColor;
+        }
+      }
+     }
+   }
+ }

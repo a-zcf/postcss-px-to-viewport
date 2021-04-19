@@ -1,0 +1,72 @@
+{
+  "id": "2479953",
+  "name": "新推客活动",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "20713907",
+      "name": "暂无数据",
+      "font_class": "zanwushuju",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "8339134",
+      "name": "关 闭 ",
+      "font_class": "guanbi",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "878175",
+      "name": "活动规则",
+      "font_class": "huodongguize",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "11087889",
+      "name": "危险",
+      "font_class": "weixian",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6182803",
+      "name": "排行榜",
+      "font_class": "paih",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "9943626",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "13001480",
+      "name": "推广名片",
+      "font_class": "tuiguangmingpian",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "20352025",
+      "name": "我的团队",
+      "font_class": "wodetuandui",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "13039044",
+      "name": "返 回",
+      "font_class": "fanhui",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    }
+  ]
+}
