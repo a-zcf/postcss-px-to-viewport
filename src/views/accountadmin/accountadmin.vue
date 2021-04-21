@@ -1,7 +1,10 @@
 <template>
   <div class="accountadmin">
-    <div class="edit-preservation" @click="preservationInfo">
-      <span>保存</span>
+    <div class="edit-preservation">
+      <router-link to="/" class="router">
+        <span class="iconfont icon-fanhui fanhui">返回</span>
+      </router-link>
+      <span @click="preservationInfo">保存</span>
     </div>
     <div class="edit-content">
       <van-field
@@ -164,9 +167,7 @@ export default {
               "downloadImage", // 下载图片
             ],
           });
-          wx.error(function (res) {
-            alert(res);
-          });
+          wx.error(function (res) {});
         }
       })
       .catch((error) => {

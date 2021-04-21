@@ -2,20 +2,16 @@
   <div class="batchbinding">
     <div class="roll">
       <ul>
-        <li v-for="(item, index) in list" :key="index">
+        <li v-for="(item, index) in preData" :key="index">
           <span class="barnName">{{ item.brandName }}</span>
-          <div id="brandCode" class="flex-demo" v-show="show">
-            <div>
-              <span id="menuItem">{{ item.brandCode }}</span>
-            </div>
-          </div>
           <span class="number">x{{ item.num }}</span>
-          <van-field
+          <p v-show="show" class="brandCode">{{ item.brandCode }}</p>
+          <input
             class="price"
             v-model="item.price"
-            type="number"
             placeholder="0"
             @input="changePrice($event)"
+            :show-clear="true"
           />
         </li>
       </ul>
@@ -52,7 +48,7 @@ export default {
       num: 0,
       price: 0,
       list: [],
-      slist: [],
+      preData: [],
     };
   },
   mounted() {
@@ -82,36 +78,36 @@ export default {
       that.$postRequest(smokeInfo, { codeStr: that.result }).then((res) => {
         if (res.data.code === 0) {
           if (this.list.length == 0) {
-            const element = res.data.data.smokeInfo;
-            element.num = 1;
-            this.list.push(element);
-            this.slist.push(res.data.data.smokeInfo);
+            let smokeInfoList = res.data.data.smokeInfo;
+            smokeInfoList.num = 1;
+            that.list.push(smokeInfoList);
+            that.preData.push(smokeInfoList);
           } else {
-            const length = this.slist.length;
-            let hasSmoke = false;
-            for (let index = 0; index < length; index++) {
-              const element = this.slist[index];
-              if (element.codeId == res.data.data.smokeInfo.codeId) {
-                hasSmoke = true;
-                break;
+            let arr = that.list;
+            let has = false;
+            arr.forEach((item, index, arr) => {
+              if (item.codeId == res.data.data.smokeInfo.codeId) {
+                has = true;
               }
-            }
-            if (hasSmoke) {
+            });
+            if (has) {
+              that.$toast("不可以重复扫同一二维码哦！");
               return;
             }
-            this.slist.push(res.data.data.smokeInfo);
-            for (let index = 0; index < length; index++) {
-              const element = this.list[index];
-              if (element.brandCode == res.data.data.smokeInfo.brandCode) {
-                element.num = element.num + 1;
-                this.list.splice(index, element);
-                break;
+            that.list.push(res.data.data.smokeInfo);
+            let arrTo = that.preData;
+            let hasTo = false;
+            arrTo.forEach((item, index, arrTo) => {
+              if (item.brandCode == res.data.data.smokeInfo.brandCode) {
+                hasTo = true;
+                item.num = item.num + 1;
+                that.preData.splice(index, item);
               }
-              if (index == length - 1) {
-                const element1 = res.data.data.smokeInfo;
-                element1.num = 1;
-                this.list.push(element1);
-              }
+            });
+            if (!hasTo) {
+              let arrList = res.data.data.smokeInfo;
+              arrList.num = 1;
+              that.preData.push(arrList);
             }
           }
         } else {
@@ -120,13 +116,15 @@ export default {
       });
     },
     changePrice(event) {
-      let indexBrandCode = document.getElementById("menuItem").innerHTML;
-      const length = this.slist.length;
+      let indexBrandCode = event.currentTarget.parentNode.getElementsByTagName(
+        "p"
+      )[0].innerHTML;
+      const length = this.list.length;
       for (let index = 0; index < length; index++) {
-        const element = this.slist[index];
+        const element = this.list[index];
         if (element.brandCode == indexBrandCode) {
-          element.price = event;
-          this.slist.splice(index, element);
+          element.price = event.currentTarget.value;
+          this.list.splice(index, element);
         }
       }
     },
@@ -143,6 +141,18 @@ export default {
     },
     clickOkBinding() {
       let that = this;
+      if (that.list.length === 0) {
+        that.$toast.fail("没有可绑定的数据，请先扫码。");
+        return;
+      }
+      const length = that.list.length;
+      for (let index = 0; index < length; index++) {
+        const element = that.list[index];
+        if (element.price <= 0 || element.price === "") {
+          that.$toast.fail("价格不能小于零");
+          return;
+        }
+      }
       that.$postRequest(smokeBind, { list: that.list }).then((res) => {
         if (res.data.code === 0) {
           that.$toast.success("绑定成功");
@@ -154,6 +164,18 @@ export default {
     },
     clickSmokeBindNoneedpay() {
       let that = this;
+      if (that.list.length === 0) {
+        that.$toast.fail("没有可绑定的数据，请先扫码。");
+        return;
+      }
+      const length = that.list.length;
+      for (let index = 0; index < length; index++) {
+        const element = that.list[index];
+        if (element.price <= 0 || element.price === "") {
+          that.$toast.fail("价格不能小于零");
+          return;
+        }
+      }
       that.$postRequest(smokeBindNoneedpay, { list: that.list }).then((res) => {
         if (res.data.code === 0) {
           that.$toast.success("绑定成功");

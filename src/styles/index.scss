@@ -1,4 +1,19 @@
 @import "theme.scss";
+/* 返回按钮*/
+.link{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px 15px;
+  color: $blueColor;
+  .fanhui{
+    font-size: 35px;
+    margin-right: 15px;
+    font-weight: 600;
+  }
+}
 /*vant轻提示全局样式 */
 .van-toast {
   min-width: 250px;
@@ -9,7 +24,12 @@
   }
 }
 /* 全局隐藏滚动条 */
-.sell::-webkit-scrollbar {
+.sell::-webkit-scrollbar, 
+.index::-webkit-scrollbar,
+.businessadmin::-webkit-scrollbar,
+.accountadmin::-webkit-scrollbar,
+.sell_list::-webkit-scrollbar,
+.roll::-webkit-scrollbar{
   display: none;
 }
 /* 全局无数据背景样式 */
@@ -72,11 +92,78 @@
     border-radius: 0px 50px 50px 0px !important;
   }
 }
-/* 首页 */
-.index {
-  overflow: hidden;
+/* 登录 */
+.login{
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  position: relative;
+  .bgimg{
+    width: 100%;
+    height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -9999;
+  }
+  .top{
+    width: 100%;
+    height: 30%;
+  }
+  .head{
+    width: 75%;
+    height: 600px;
+    margin: 30px auto auto auto;
+    background-color: $whiteColor;
+    box-sizing: border-box;
+    padding: 30px;
+    box-shadow: 0px 5px 15px 2px $blueColor;
+    border-radius: 15px;
+    position: relative;
+    .margin-top{
+       margin-top: 0px !important;
+    }
+    .input{
+      height: 100px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-top: 35px;
+      border-bottom: 1px solid $lightGrayColor;
+      .van-cell{
+        font-size: 30px;
+      }
+      .van-field__clear{
+        font-size: 30px;
+      }
+      label{
+        font-size: 50px;
+        color: $blueColor;
+      }
+    }
+    button{
+      width:100%;
+      height: 80px;
+      color: $whiteColor;
+      margin-top: 120px;
+      // position: absolute;
+      // left: 5%;
+      // bottom: 50px;
+      border: none;
+      border-radius: 50px;
+      background-image: linear-gradient(to left, $skyBlueColor, $blueColor);
+    }
+  }
+}
+
+/* 首页 */
+.index {
+  // overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: auto;
   .haed-notice {
     .van-notice-bar {
       height: 80px !important;
@@ -142,10 +229,15 @@
     }
   }
   .my-swipe {
-    width: 100%;
+    width: 90%;
+    height: 380px;
+    margin: 30px auto auto auto;
+    border-radius: 15px;
+    box-shadow: 0px 1px 15px 10px $lightGrayColor;
     img {
       width: 100%;
-      height: 380px;
+      height: 100%;
+      border-radius: 15px;
     }
     .van-swipe__indicators {
       bottom: 40px !important;
@@ -156,82 +248,205 @@
     }
   }
   .list {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 33px;
-    ul li {
-      width: 95%;
-      height: 80px;
-      line-height: 80px;
-      margin: auto;
-      border-bottom: 1px solid $lightGrayColor;
+    width: 90%;
+    margin:30px auto 30px auto;
+    background-color: $whiteColor;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 1px 15px 6px $lightGrayColor;
+    ul li{
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .font-i{
+        font-size: 40px;
+      }
+      .icon-gexinghuashezhi{
+        color: $doderBlueColor;
+        font-size: 36px;
+      }
+      span{
+        width: 80%;
+        color: $greyColor;
+      }
+      .icon-gengduo1{font-size: 35px; color: $fontGreyColor;}
+      .icon-left-yingyeguanli{color: $orangeColor;}
+      .icon-xiaofeizhedongcha{color: $cyanColor;}
+      .icon-zhanghuguanli{color: $blueColor;}
+    }
+    .but{
       display: flex;
       flex-wrap: nowrap;
-      color: $greyColor;
-      .account_balance {
-        width: 65%;
-        padding-left: 15px;
-      }
-      .balance {
-        width: 25%;
-        color: $orangeColor;
-        margin-right: 3px;
-      }
-      .more {
-        width: 6%;
-        font-size: 30px;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding:40px;
+      .but-icon{
+        width: 230px;
+        height: 230px;
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+        box-shadow: 0px 1px 15px 6px $lightGrayColor;
+        border-radius: 15px;
+        .iconfont{
+          font-size: 80px;
+          margin-top: 45px;
+        }
+        .icon-anniu01{color: $blueColor;}
+        .icon-piliangtianjia01{color: $cyanColor;}
+        p{
+          margin-top: 10px;
+        }
       }
     }
   }
+  // .list {
+  //   width: 100%;
+  //   margin-top: 10px;
+  //   font-size: 33px;
+  //   ul li {
+  //     width: 95%;
+  //     height: 80px;
+  //     line-height: 80px;
+  //     margin: auto;
+  //     border-bottom: 1px solid $lightGrayColor;
+  //     display: flex;
+  //     flex-wrap: nowrap;
+  //     color: $greyColor;
+  //     .account_balance {
+  //       width: 65%;
+  //       padding-left: 15px;
+  //     }
+  //     .balance {
+  //       width: 25%;
+  //       color: $orangeColor;
+  //       margin-right: 3px;
+  //     }
+  //     .more {
+  //       width: 6%;
+  //       font-size: 30px;
+  //     }
+  //   }
+  // }
 }
+// .businessadmin::-webkit-scrollbar {
+//   display: none;
+// }
 /* 营业管理 */
 .businessadmin {
   width: 100%;
   overflow: hidden;
+  overflow: auto;
+  
   .busadmin-icon {
-    width: 100%;
-    overflow: hidden;
-    ul {
-      width: 95%;
-      margin: 25px auto auto auto;
+    width: 85%;
+    // overflow: hidden;
+    margin:15px auto auto auto;
+    // padding: 15px;
+    // box-shadow: 0px 1px 15px 6px $lightGrayColor;
+    box-sizing: border-box;
+    // border-radius: 15px;
+    ul{
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      box-sizing: border-box;
-      .router {
-        width: 25%;
-        margin: 29.5px;
+      justify-content: space-between;
+      li{
+        box-shadow: 0px 1px 15px 6px $lightGrayColor;
+        width: 45%;
+        height: 287px;
         text-align: center;
-        color: $greyColor;
-        .icon {
-          width: 100%;
-          height: 180px;
-          border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-bottom: 55px;
+        border-radius: 15px;
+        .link-router{
+         width: 100%;
+         display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         }
-        .icon-blue {
-          background-color: $doderBlueColor;
+        span{
+          margin-top: 10px;
+          font-size: 35px;
         }
-        .icon-pink {
-          background-color: $pinkColor;
+        .iconfont{
+          font-size: 80px;
         }
-        .sea-blue {
-          background-color: $cyanColor;
+        .link-router01{
+          color: $doderBlueColor;
         }
-        .icon-text {
-          display: block;
-          padding: 20px 0 0 0;
-          font-size: 30px;
+        .link-router02{
+          color: $orangeColor;
         }
-        .icon-color {
-          color: $whiteColor;
-          line-height: 180px;
-          font-size: 60px;
+        .link-router03{
+          color: $cyanColor;
         }
-        .icon-size {
-          font-size: 65px;
+        .link-router04{
+          color: $doderBlueColor;
+        }
+        .link-router05{
+          color: $blueColor;
+        }
+        .link-router06{
+          color: $pinkColor;
+        }
+        .link-router07{
+          color: $skyBlueColor;
+        }
+        .link-router08{
+          color: $doderBlueColor;
         }
       }
     }
+    // ul {
+    //   width: 95%;
+    //   margin: 25px auto auto auto;
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   align-items: center;
+    //   box-sizing: border-box;
+    //   .router {
+    //     width: 25%;
+    //     margin: 29.5px;
+    //     text-align: center;
+    //     color: $greyColor;
+    //     .icon {
+    //       width: 100%;
+    //       height: 180px;
+    //       border-radius: 15px;
+    //     }
+    //     .icon-blue {
+    //       background-color: $doderBlueColor;
+    //     }
+    //     .icon-pink {
+    //       background-color: $pinkColor;
+    //     }
+    //     .sea-blue {
+    //       background-color: $cyanColor;
+    //     }
+    //     .icon-text {
+    //       display: block;
+    //       padding: 20px 0 0 0;
+    //       font-size: 30px;
+    //     }
+    //     .icon-color {
+    //       color: $whiteColor;
+    //       line-height: 180px;
+    //       font-size: 60px;
+    //     }
+    //     .icon-size {
+    //       font-size: 65px;
+    //     }
+    //   }
+    // }
   }
 }
 /* 消费者管理 */
@@ -300,9 +515,9 @@
   }
 }
 /* 账户管理 */
-.accountadmin::-webkit-scrollbar {
-  display: none;
-}
+// .accountadmin::-webkit-scrollbar {
+//   display: none;
+// }
 .accountadmin {
   width: 100%;
   overflow: hidden;
@@ -312,11 +527,20 @@
     height: 100px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     padding: 0px 30px;
     color: $blueColor;
+    .fanhui{
+      font-size: 30px;
+    }
+    .router{
+      color: $blueColor;
+    }
+    .icon-fanhui:before{
+      margin-right: 15px;
+    }
   }
   .edit-content {
     .van-cell {
@@ -402,9 +626,9 @@
       overflow: hidden;
     }
   }
-  .sell_list::-webkit-scrollbar {
-    display: none;
-  }
+  // .sell_list::-webkit-scrollbar {
+  //   display: none;
+  // }
   .sell_list {
     width: 95%;
     height: 100%;
@@ -672,6 +896,15 @@
     height: 40%;
     margin: 8% auto auto auto;
   }
+  .title-price{
+    width: 90%;
+    height: 250px;
+    box-sizing: border-box;
+    // padding: 15px;
+    box-shadow: 2px 2px 15px 5px $lightGrayColor;
+    margin:15px auto auto auto;
+    border-radius: 15px;
+  }
   .barnName {
     width: 85%;
     box-sizing: border-box;
@@ -683,26 +916,60 @@
     color: $blueColor;
     font-weight: 700;
   }
-  .acigarette-price {
-    width: 85%;
-    margin: auto;
-    .van-cell {
-      // padding: 30px 0px;
-      font-size: 30px;
-      .van-field__label {
-        height: 70px;
-        line-height: 70px;
-      }
-      .van-field__control {
-        height: 70px;
-        border: 1px solid $lightGrayColor;
-        line-height: 0px;
-        padding: 0 15px;
-        box-sizing: border-box;
-        border-radius: 10px;
-      }
+  .title {
+    width: 100%;
+    height: 75px;
+    line-height: 70px;
+    background-image: linear-gradient(to right, $blueColor, $skyBlueColor);
+    border-radius: 15px 15px 0px 0px;
+    box-sizing: border-box;
+    color: $whiteColor;
+    font-size: 35px;
+    span{
+      display: block;
+      width: 95%;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: auto;
+      text-align: center;
     }
   }
+  .van-cell{
+    width: 90%;
+    font-size: 30px;
+    margin:60px auto auto auto;
+    box-sizing: border-box;
+    box-shadow:2px 2px 15px 5px $lightGrayColor;
+    border-radius: 50px;
+    .van-field__control{
+      height: 50px;
+      line-height: 50px;
+      color: $orangeColor;
+      text-align: center;
+      font-weight: 600;
+      font-size: 35px;
+    }
+  }
+  // .acigarette-price {
+  //   width: 85%;
+  //   margin: auto;
+  //   .van-cell {
+  //     // padding: 30px 0px;
+  //     font-size: 30px;
+  //     .van-field__label {
+  //       height: 70px;
+  //       line-height: 70px;
+  //     }
+  //     .van-field__control {
+  //       height: 70px;
+  //       border: 1px solid $lightGrayColor;
+  //       line-height: 0px;
+  //       padding: 0 15px;
+  //       box-sizing: border-box;
+  //       border-radius: 10px;
+  //     }
+  //   }
+  // }
   .button {
     display: block;
     position: absolute;
@@ -722,9 +989,9 @@
   height: 100%;
   overflow: hidden;
   position: relative;
-  .roll::-webkit-scrollbar {
-    display: none;
-  }
+  // .roll::-webkit-scrollbar {
+  //   display: none;
+  // }
   .roll {
     height: 100%;
     overflow: auto;
@@ -757,22 +1024,20 @@
           overflow: hidden;
           text-align: center;
         }
-        .van-cell {
+        .price{
           width: 25%;
-          padding: 0;
           border-radius: 50px;
-          .van-field__control {
-            height: 50px;
+          height: 50px;
             box-sizing: border-box;
             padding: 0 10px;
             font-size: 30px;
             text-align: center;
             color: $blueColor;
-          }
-          input::-webkit-input-placeholder {
-            color: $blueColor;
-          }
+            border: none;
         }
+        input::-webkit-input-placeholder {
+              color: $blueColor;
+            }
       }
     }
   }
@@ -807,13 +1072,15 @@
         width: 16%;
         height: 120px;
         left: 42%;
-        text-align: center;
-        line-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 50%;
         border: none;
         background-color: $blackColor;
         color: $whiteColor;
         font-size: 50px;
+        font-weight: 600;
         box-shadow:2px 2px 15px 5px $blueColor;
       }
     }

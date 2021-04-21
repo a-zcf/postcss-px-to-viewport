@@ -1,6 +1,10 @@
 
 <template>
   <div class="stockdetailed">
+    <router-link to="/stock" class="link">
+      <i class="iconfont icon-fanhui fanhui"></i>
+      <span>返回</span>
+    </router-link>
     <div class="detailed-title">
       <span>烟品规格</span>
       <span>激活时间</span>

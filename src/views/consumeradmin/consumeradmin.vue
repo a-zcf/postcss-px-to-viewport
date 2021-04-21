@@ -1,5 +1,9 @@
 <template>
   <div class="consumeradmin">
+    <router-link to="/" class="link">
+      <i class="iconfont icon-fanhui fanhui"></i>
+      <span>返回</span>
+    </router-link>
     <mescroll-vue
       ref="mescroll"
       :down="mescrollDown"
@@ -69,7 +73,7 @@ export default {
         pageNo: page.num,
         pageSize: page.size,
       }).then((res) => {
-        if (res.data.code === "0") {
+        if (res.data.code === 0) {
           let arr = res.data.data.list;
           if (page.num === 1) this.list = [];
           this.list = this.list.concat(arr);

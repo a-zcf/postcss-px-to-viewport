@@ -34,31 +34,43 @@
       <ul>
         <router-link to="/businessadmin">
           <li>
-            <span class="account_balance">营业管理</span>
-            <span class="balance"></span>
-            <span class="iconfont icon-gengduo more"></span>
+            <i class="iconfont icon-left-yingyeguanli font-i"></i>
+            <span>营业管理</span>
+            <i class="iconfont icon-gengduo1"></i>
           </li>
         </router-link>
         <router-link to="/consumeradmin">
           <li>
-            <span class="account_balance">消费者管理</span>
-            <span class="balance"></span>
-            <span class="iconfont icon-gengduo more"></span>
+            <i class="iconfont icon-xiaofeizhedongcha font-i"></i>
+            <span>消费者管理</span>
+            <i class="iconfont icon-gengduo1"></i>
           </li>
         </router-link>
         <router-link to="/accountadmin">
           <li>
-            <span class="account_balance">账户管理</span>
-            <span class="balance"></span>
-            <span class="iconfont icon-gengduo more"></span>
+            <i class="iconfont icon-zhanghuguanli font-i"></i>
+            <span>账户管理</span>
+            <i class="iconfont icon-gengduo1"></i>
           </li>
         </router-link>
+        <li @click="clickShopLoginUrl">
+          <i class="iconfont icon-gexinghuashezhi"></i>
+          <span>个性化设置</span>
+          <i class="iconfont icon-gengduo1"></i>
+        </li>
       </ul>
     </div>
-    <div class="binding-but">
-      <button class="left-jiao" @click="clickSingleBinding">单个绑定</button>
-      <span></span>
-      <button class="right-jiao" @click="clickBatchBinding">批量绑定</button>
+    <div class="list">
+      <div class="but">
+        <div class="but-icon" @click="clickSingleBinding">
+          <i class="iconfont icon-anniu icon-anniu01"></i>
+          <p class="icon-anniu01">单个绑定</p>
+        </div>
+        <div class="but-icon" @click="clickBatchBinding">
+          <i class="iconfont icon-piliangtianjia icon-piliangtianjia01"></i>
+          <p class="icon-piliangtianjia01">批量绑定</p>
+        </div>
+      </div>
     </div>
     <!-- 公告弹框 -->
     <van-overlay :show="show" class="notice-overlay">
@@ -70,25 +82,6 @@
         <button @click="clickOk">好的</button>
       </div>
     </van-overlay>
-    <!-- 绑定弹框 -->
-    <van-overlay :show="show1" class="notice-overlay">
-      <div class="wrapper">
-        <h3>绑定</h3>
-        <van-field
-          v-model="licence"
-          label="许可证号："
-          placeholder="请输入您的有效许可证号"
-          clearable
-        />
-        <van-field
-          v-model="phone"
-          label="电话号码："
-          placeholder="请输入您的有效号码"
-          clearable
-        />
-        <button @click="clickBinding">确定</button>
-      </div>
-    </van-overlay>
   </div>
 </template>
 
@@ -96,9 +89,8 @@
 import {
   notice,
   slider,
-  isBind,
-  supplierBind,
   getJssdkConfig,
+  getThirdIndexUrl,
 } from "../../api/api";
 import wx from "weixin-js-sdk";
 export default {
@@ -107,26 +99,17 @@ export default {
     return {
       noticeList: [],
       show: false,
-      show1: false,
+      // show1: false,
       showsHowMarquee: false,
       img: require("../../assets/img/head-1.png"),
       imgList: [],
       licence: "",
       phone: "",
+      shopLoginUrl: "",
     };
   },
   mounted() {
     let that = this;
-    that.$postRequest(isBind).then((res) => {
-      if (res.data.code === 0) {
-        let getIsBind = res.data.data.isBind;
-        if (getIsBind === true) {
-          that.show1 = false;
-        } else {
-          that.show1 = true;
-        }
-      }
-    });
     that.$postRequest(notice).then((res) => {
       if (res.data.code === 0) {
         if (res.data.data.list.length <= 0) {
@@ -163,47 +146,14 @@ export default {
         wx.error(function (res) {});
       }
     });
+    that.$getRequest(getThirdIndexUrl).then((res) => {
+      if (res.data.code == 0) {
+        let { shopLoginUrl } = res.data.data;
+        that.shopLoginUrl = shopLoginUrl;
+      }
+    });
   },
   methods: {
-    clickBinding() {
-      // this.show1 = false;
-      let that = this;
-      if (
-        that.licence === "" ||
-        that.licence === null ||
-        typeof that.licence === undefined
-      ) {
-        that.$toast("请输入您的有效许可证号");
-        return false;
-      }
-      if (
-        that.phone === "" ||
-        that.phone === null ||
-        typeof that.phone === undefined
-      ) {
-        that.$toast("请输入您的有效号码");
-        return false;
-      }
-      that
-        .$postRequest(supplierBind, {
-          licence: that.licence,
-          phone: that.phone,
-        })
-        .then((res) => {
-          console.log(res);
-          if (res.data.code === 0) {
-            that.$toast.success("绑定成功");
-            that.licence = "";
-            that.phone = "";
-            that.show1 = false;
-            window.location = res.data.data.authUrl;
-          } else {
-            that.licence = "";
-            that.phone = "";
-            that.$toast.fail(res.data.msg);
-          }
-        });
-    },
     See(e) {
       window.location.href = e;
     },
@@ -240,6 +190,9 @@ export default {
           });
         },
       });
+    },
+    clickShopLoginUrl() {
+      window.location = this.shopLoginUrl;
     },
   },
 };

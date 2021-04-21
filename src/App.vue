@@ -111,18 +111,20 @@ body {
           }
         }
       }
+      .batchbinding {
+        .add-icon {
+          font-size: 40px !important;
+        }
+      }
     }
   }
   //iphone 6/6S/7/8 4.7英寸
-  @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
     #app {
-      // #iphonex-helper-body {
-      //   box-sizing: border-box !important;
-      // }
     }
   }
   //iphone 6+/6S+/7+/8+ 5.5英寸
-  @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
     #app {
       // #iphonex-helper-body {
       //   box-sizing: border-box !important;
@@ -130,7 +132,7 @@ body {
     }
   }
   //iphone X
-  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     #app {
       // #iphonex-helper-body {
       //   box-sizing: border-box !important;
@@ -138,7 +140,7 @@ body {
     }
   }
   //iphone XS MAX
-  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
     #app {
       // #iphonex-helper-body {
       //   box-sizing: border-box !important;
@@ -146,7 +148,7 @@ body {
     }
   }
   //iphone XR
-  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
     #app {
       // #iphonex-helper-body {
       //   box-sizing: border-box !important;

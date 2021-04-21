@@ -1,6 +1,10 @@
 
 <template>
   <div class="stock">
+    <router-link to="/businessadmin" class="link">
+      <i class="iconfont icon-fanhui fanhui"></i>
+      <span>返回</span>
+    </router-link>
     <div class="head-title">
       <span>烟品规格</span>
       <span>激活数量</span>

@@ -1,5 +1,9 @@
 <template>
   <div class="sellingtoday">
+    <router-link to="/businessadmin" class="link">
+      <i class="iconfont icon-fanhui fanhui"></i>
+      <span>返回</span>
+    </router-link>
     <div class="list_title">
       <span class="time">当前时间：{{ currentTime }}</span>
       <span class="total">总额：{{ totalAmount }}</span>

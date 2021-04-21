@@ -2,6 +2,7 @@
   <div class="singlebinding">
     <img :src="imgUrl" class="imgUrl" />
     <p class="barnName">{{ brandName }}</p>
+    <!-- <p class="barnName">{{ brandName }}真龙</p>
     <div class="acigarette-price">
       <van-field
         v-model="price"
@@ -9,6 +10,12 @@
         label="整条烟价："
         placeholder="建议零售价"
       />
+    </div> -->
+    <div class="title-price">
+      <p class="title">
+        <span>整条烟价</span>
+      </p>
+      <van-field v-model="price" type="number" placeholder="建议零售价" />
     </div>
     <!-- <button class="button" @click="clickSmokeBind">确认绑定</button> -->
     <div class="binding-but">
@@ -37,6 +44,10 @@ export default {
   },
   mounted() {
     let that = this;
+    var hrt = document.documentElement.clientHeight;
+    this.$nextTick(() => {
+      document.getElementById("app").style.height = hrt + "px";
+    });
     let result = that.$route.query.result;
     that.$postRequest(smokeInfo, { codeStr: result }).then((res) => {
       if (res.data.code === 0) {
@@ -62,6 +73,10 @@ export default {
   methods: {
     clickSmokeBind() {
       let that = this;
+      if (that.price <= 0) {
+        that.$toast.fail("价格不能小于零");
+        return false;
+      }
       let params = {
         list: [
           { batchCode: that.batchCode, codeId: that.codeId, price: that.price },
@@ -80,6 +95,10 @@ export default {
     },
     clickSmokeBindNoneedpay() {
       let that = this;
+      if (that.price <= 0) {
+        that.$toast.fail("价格不能小于零");
+        return false;
+      }
       let params = {
         list: [
           { batchCode: that.batchCode, codeId: that.codeId, price: that.price },

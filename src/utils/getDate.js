@@ -41,17 +41,18 @@ export default {
         monthly: [],
         month:''
     }
-     let date = new Date()
-     function formatTen(num) { 
-        return num > 9 ? (num + "") : ("0" + num); 
+    var data = new Date();
+    var mon = data.getMonth() + 1
+    mon = mon < 10 ? "0" + mon : mon;
+    monthlyArr.month = data.getFullYear() + "-" + mon
+
+    data.setMonth(data.getMonth()+1, 1)//获取到当前月份,设置月份
+    for (var i = 0; i < 12; i++) {
+        data.setMonth(data.getMonth() - 1);//每次循环一次 月份值减1
+        var m = data.getMonth() + 1;
+        m = m < 10 ? "0" + m : m;
+        monthlyArr.monthly.push(data.getFullYear() + "-" + (m))
     }
-    monthlyArr.month = date.getFullYear() + "-" + formatTen(date.getMonth() + 1)
-     date.setMonth(date.getMonth() + 1, 0); //获取到当前月份,设置月份
-     for(let i=0;i<12;i++){
-        date.setMonth(date.getMonth() - 1); //每次循环一次 月份值减1
-        let m = formatTen(date.getMonth() + 1);
-        monthlyArr.monthly.push(date.getFullYear() + "-" + m);
-     }
      return monthlyArr
     }
 }

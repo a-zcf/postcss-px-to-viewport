@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11971630",
+      "name": "个性化设置",
+      "font_class": "gexinghuashezhi",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "17720454",
+      "name": "登录管理",
+      "font_class": "dengluguanli",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "19141834",
+      "name": "单个按钮",
+      "font_class": "anniu",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "20017426",
+      "name": "批量添加",
+      "font_class": "piliangtianjia",
+      "unicode": "e850",
+      "unicode_decimal": 59472
+    },
+    {
+      "icon_id": "9097243",
+      "name": "更多",
+      "font_class": "gengduo1",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "1133576",
+      "name": "消费者洞察",
+      "font_class": "xiaofeizhedongcha",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "15643750",
+      "name": "消费者管理",
+      "font_class": "xiaofeizheguanli",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "19200349",
+      "name": "left-营业管理",
+      "font_class": "left-yingyeguanli",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "20051009",
+      "name": "账户管理",
+      "font_class": "zhanghuguanli",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1129600",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "13488864",
+      "name": "鉴定机构信息获取按许可证号",
+      "font_class": "jiandingjigouxinxihuoquanxukezhenghao",
+      "unicode": "e853",
+      "unicode_decimal": 59475
+    },
+    {
       "icon_id": "16250695",
       "name": "加 (3)",
       "font_class": "jia3",

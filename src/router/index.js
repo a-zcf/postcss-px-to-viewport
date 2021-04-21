@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+const Transition = () => import ('@/views/transition/transition')
 const Index = () => import ('@/views/index/index')
+const Login = () => import ('@/views/login/login')
 const   BusinessAdmin = () => import ('@/views/businessadmin/businessadmin')
 const   ConsumerAdmin = () => import ('@/views/consumeradmin/consumeradmin')
 const   AccountAdmin = () => import ('@/views/accountadmin/accountadmin')
@@ -19,7 +21,9 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/', name: 'index', component: Index, meta: {title: '首页'}},
+    {path: '/', name: 'transition', component: Transition, meta: {title: '广西中烟终端管理平台'}},
+    {path: '/index', name: 'index', component: Index, meta: {title: '首页'}},
+    {path: '/login', name: 'login', component: Login, meta: {title: '广西中烟终端管理平台'}},
     {path: '/businessadmin', name: 'businessadmin', component: BusinessAdmin, meta: {title: '营业管理'}},
     {path: '/consumeradmin', name: 'consumeradmin', component: ConsumerAdmin, meta: {title: '消费者管理'}},
     {path: '/accountadmin', name: 'accountadmin', component: AccountAdmin, meta: {title: '账户管理'}},

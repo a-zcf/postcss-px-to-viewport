@@ -42,14 +42,14 @@ export default {
             this.show = true;
             clearInterval(this.timer);
             this.timer = null;
-            this.$router.push({ path: "/" });
+            this.$router.push({ path: "/index" });
           }
         }, 1000);
       }
     },
     returnIndex() {
       clearInterval(this.timer);
-      this.$router.push({ path: "/" });
+      this.$router.push({ path: "/index" });
     },
   },
 };
